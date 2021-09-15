@@ -51,8 +51,6 @@ function App() {
 
   const handleSelectFromButton = (props) => {
     console.log(props.target.id);
-    console.log(props.target.value);
-
     setBtnActivo(props.target.id);
     setModalShow(true);
   };
@@ -101,31 +99,34 @@ function App() {
               <Nav.Link>{btnActivo}</Nav.Link>
             </LinkContainer>
             <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-              {/* <NavDropdown.Item onClick={() => handleShow()}>
+              <NavDropdown.Item onClick={() => handleShow()}>
                 Canva
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item onClick={() => handleSelect()}>
                 Modal
-              </NavDropdown.Item> */}
+              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
+
+          <MyVerticallyCenteredModal
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+            nombres={nombres}
+            // deleteTodo={deleteTodo}
+            // _handleClick={(a) => handleClick(a)}
+          />
 
           <MyButton
             nombres={nombres}
             _handleSelectFromButton={(a) => handleSelectFromButton(a)}
-
           />
         </Navbar.Collapse>
       </Navbar>
 
       <Switch>
         <Route path={"/usuarios"}>
-          <Container style={{ padding: 30 }}>
-            <u>
-              <Usuarios data={nombres} />{" "}
-            </u>
-          </Container>
+          <Container style={{ padding: 30 }} />
         </Route>
         <Route path={"/Formulario"}>
           <Container style={{ padding: 20 }}>

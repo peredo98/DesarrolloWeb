@@ -7,7 +7,7 @@ export default function MyButton(params) {
       <ShoppingCartOutlinedIcon
         value="miValor"
         id="Carrito"
-        onClick={(a) => params._handleSelectFromButton(a)}
+        onClick={(e) => params._handleSelectFromButton(e)}
         style={{ color: "white" }}
         fontSize="large"
       />
