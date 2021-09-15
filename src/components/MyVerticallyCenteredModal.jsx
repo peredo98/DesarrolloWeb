@@ -6,6 +6,7 @@ import {
   Button,
   Modal,
 } from "react-bootstrap";
+
 import Usuarios from "../routers/UsuariosRouters";
 
 export default function MyVerticallyCenteredModal(props) {
@@ -22,13 +23,11 @@ export default function MyVerticallyCenteredModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Centered Modal</h4>
-
         <Usuarios data={props.nombres} />
-        
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick>Close</Button>
+        {console.log(props)}
+        <Button onClick={props.onHide}>Close</Button>
       </Modal.Footer>
     </Modal>
   );

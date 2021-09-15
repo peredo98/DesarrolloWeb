@@ -121,7 +121,9 @@ function App() {
             nombres={nombres}
             _handleSelectFromButton={(a) => handleSelectFromButton(a)}
           />
+          
         </Navbar.Collapse>
+
       </Navbar>
 
       <Switch>
