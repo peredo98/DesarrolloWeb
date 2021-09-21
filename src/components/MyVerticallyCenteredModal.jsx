@@ -1,8 +1,4 @@
 import {
-  Container,
-  Navbar,
-  Nav,
-  NavDropdown,
   Button,
   Modal,
 } from "react-bootstrap";
@@ -23,11 +19,11 @@ export default function MyVerticallyCenteredModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Usuarios data={props.nombres} />
+        <h4>Centered Modal</h4>
+        <Usuarios data={props.nombres}/>
       </Modal.Body>
       <Modal.Footer>
-        {console.log(props)}
-        <Button onClick={props.onHide}>Close</Button>
+        <Button onClick={props.onHide} >Close</Button>
       </Modal.Footer>
     </Modal>
   );

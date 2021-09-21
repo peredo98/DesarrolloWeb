@@ -1,15 +1,11 @@
+
 import axios from "axios";
-import React, { useState, useEffect, useInputState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Container, Navbar, Nav, Col, NavDropdown, Row } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route,  } from "react-router-dom";
+import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 
-import Usuarios from "./routers/UsuariosRouters";
-import Formulario from "./routers/FormularioRouters";
-import Loading from "./components/Loading";
-
 import MyVerticallyCenteredModal from "./components/MyVerticallyCenteredModal";
-import MyOffSet from "./components/MyOffSet";
 import MyButton from "./components/MyButton";
 
 function App() {
@@ -51,6 +47,8 @@ function App() {
 
   const handleSelectFromButton = (props) => {
     console.log(props.target.id);
+    console.log(props.target.value);
+
     setBtnActivo(props.target.id);
     setModalShow(true);
   };
@@ -85,7 +83,6 @@ function App() {
             SAI
           </Navbar.Brand>
         </LinkContainer>
-
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -115,20 +112,17 @@ function App() {
             nombres={nombres}
             // deleteTodo={deleteTodo}
             // _handleClick={(a) => handleClick(a)}
-          />
-
+          /> 
           <MyButton
             nombres={nombres}
             _handleSelectFromButton={(a) => handleSelectFromButton(a)}
           />
-          
         </Navbar.Collapse>
-
       </Navbar>
-
       <Switch>
         <Route path={"/usuarios"}>
-          <Container style={{ padding: 30 }} />
+          <Container style={{ padding: 30 }}>
+          </Container>
         </Route>
         <Route path={"/Formulario"}>
           <Container style={{ padding: 20 }}>
